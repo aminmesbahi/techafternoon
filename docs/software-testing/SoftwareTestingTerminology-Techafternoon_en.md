@@ -1,5 +1,3 @@
-Below is an English version of the file, preserving its structure and providing accurate translations of each item and explanation.
-
 # Frequently Used Concepts in Software Testing
 
 ## A
