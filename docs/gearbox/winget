@@ -1,0 +1,7 @@
+winget install Docker.DockerDesktop
+winget install GitHub.GitHubDesktop
+winget install JanDeDobbeleer.OhMyPosh
+winget install Microsoft.PowerToys
+winget install NickeManarin.ScreenToGif
+winget install Notepad++.Notepad++
+winget install Ollama.Ollama
