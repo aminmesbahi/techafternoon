@@ -83,7 +83,7 @@ foreach (var rate in exchangeRates)
     await memory.SaveInformationAsync(
         MemoryCollectionName,
         id: memoryKey,
-        text: $"1 {rate.Key} equals {rate.Value * 10} Iranian Rials."
+        text: $"1 {rate.Key} equals {rate.Value.AverageRate * 10} Iranian Rials. Last Update: {rate.Value.LastUpdate}"
     );
     counter++;
 }
@@ -128,17 +128,20 @@ Console.WriteLine("\nAll done!");
 
 
 // ========== Dummy Implementation of GetExchangeRatesAsync ==========
-static async Task<Dictionary<string, double>> GetExchangeRatesAsync(string url)
+static async Task<Dictionary<string, (double AverageRate, string LastUpdate)>> GetExchangeRatesAsync(string url)
 {
     await Task.Delay(500); // Simulate delay
 
-    return new Dictionary<string, double>
+    var lastUpdate = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
+
+    return new Dictionary<string, (double AverageRate, string LastUpdate)>
     {
-        { "USD", 610000 },
-        { "EUR", 665000 },
-        { "GBP", 775000 }
+        { "USD", (610000, lastUpdate) },
+        { "EUR", (665000, lastUpdate) },
+        { "GBP", (775000, lastUpdate) }
     };
 }
+
 
 /*
 static async Task<Dictionary<string, (double AverageRate, string LastUpdate)>> GetExchangeRatesAsync(string url)
