@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.0" />
+    <PackageReference Include="Microsoft.KernelMemory" Version="0.97.250211.1" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.42.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Ollama" Version="1.42.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Postgres" Version="1.44.0-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.Qdrant" Version="1.44.0-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel.Plugins.Memory" Version="1.42.0-alpha" />
+    <PackageReference Include="Npgsql" Version="9.0.3" />
+    <PackageReference Include="OllamaSharp" Version="5.1.7" />
+  </ItemGroup>
+
+</Project>
