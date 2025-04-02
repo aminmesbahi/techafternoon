@@ -105,7 +105,7 @@ var arguments = new KernelArguments(settings)
 {
     { "input", question },
     { "collection", MemoryCollectionName },
-    { "relevance", 0.8 }
+    { "relevance", 0.1 }
 };
 
 string[] currencyPairs = { "Euro to Iranian Rial", "EUR to IRR", "Euro/IRR" };
@@ -126,7 +126,7 @@ await foreach (var result in response)
 
 Console.WriteLine("\nAll done!");
 
-/*
+
 // ========== Dummy Implementation of GetExchangeRatesAsync ==========
 static async Task<Dictionary<string, double>> GetExchangeRatesAsync(string url)
 {
@@ -139,8 +139,8 @@ static async Task<Dictionary<string, double>> GetExchangeRatesAsync(string url)
         { "GBP", 775000 }
     };
 }
-*/
 
+/*
 static async Task<Dictionary<string, (double AverageRate, string LastUpdate)>> GetExchangeRatesAsync(string url)
 {
     var exchangeRates = new Dictionary<string, (double AverageRate, string LastUpdate)>();
@@ -177,3 +177,4 @@ static async Task<Dictionary<string, (double AverageRate, string LastUpdate)>> G
     }
     return exchangeRates;
 }
+*/
