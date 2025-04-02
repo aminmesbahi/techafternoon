@@ -34,6 +34,7 @@ class Program
         var embeddingSpan = embeddingMemory.Span;
         // Output the embedding to the console
         Console.WriteLine($"Embedding for '{inputText}':");
+        //Console.WriteLine($"Embedding Length: '{embeddingSpan.Length}'!");
         for (int i = 0; i < embeddingSpan.Length; i++)
         {
             Console.Write(embeddingSpan[i]);
