@@ -1,0 +1,16 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__API_KEY: "my-secret-key" 
+      QDRANT__STORAGE__SNAPSHOT_PERIOD_SEC: 3600
+    restart: unless-stopped
+
+volumes:
+  qdrant_storage:
