@@ -125,16 +125,46 @@ This tests the LLM's answer without any external context (zero-shot).
 ## 📬 Sample Output
 
 ```bash
-❓ Our question is: Do you know what the exchange rate is for 1 Euro compared to 1 Iranian rial?
-1st: Ask directly from Llama3.2 (3 billion)
-Llama3.2's direct answer:
-> Sorry, I don't have access to real-time currency data.
+dotnet run --project .\Example\Example.csproj
+❓ Our question is: Do you know what the exchange rate is for 1 EUR compared to 1 IRR?
+1) Ask directly from Llama3.2 (3b)
+2) Use RAG with Qdrant to retrieve updated info, then ask Llama3.2
+***************************************
+--- Llama3.2's direct answer ---
+I can't provide real-time or the most current exchange rates, but I can give you an approximate conversion rate.
+
+As of my knowledge cutoff in 2023, 1 EUR was approximately equal to 17,000 - 18,000 IRR (Iranian Rial). However, please note that exchange rates can fluctuate frequently and may have changed since my knowledge cutoff. For the most up-to-date and accurate conversion rate, I recommend checking a reliable currency exchange website or service, such as XE.com or Oanda.com.
+***************************************
+Press Enter to use RAG (Qdrant)...
 
 ***************************************
-Press Enter to use RAG
-***************************************
 Llama3.2's answer with RAG (using Qdrant):
-> Based on retrieved data, 1 Euro equals approximately 6,650,000 Iranian Rials. Source: bonbast.org. Last update: 2025/04/03 14:25:00.
+
+5 rates added to Qdrant DB.
+**Question:**
+Do you know what the exchange rate is for 1 EUR compared to 1 IRR?
+
+**Retrieved Exchange Rate Snippet:**
+
+
+1 USD = 1,036,920 IRR
+Last update: 4/4/2025 3:55:05 PM
+1 GBP = 1,342,120 IRR
+Last update: 4/4/2025 3:55:05 PM
+1 EUR = 1,121,180 IRR
+Last update: 4/4/2025 3:55:05 PM
+
+**Answer:**
+
+- Exchange Rate:
+1 EUR = 1,121,180 IRR
+
+- Last Update:
+4/4/2025 3:55:05 PM
+
+- Notes:
+The exchange rate for 1 EUR to 1 IRR is 1,121,180. The last update date is 4/4/2025 3:55:05 PM.
+All done!
 ```
 
 
