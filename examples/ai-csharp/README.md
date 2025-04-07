@@ -34,3 +34,5 @@ This sample focuses on vector search and document storage using Qdrant and Azure
    ```bash
    git clone https://github.com/your-repo/ai-csharp-examples.git
    cd ai-csharp-examples
+
+2. All examples are in .NET 9 (now, I'll add Python examples, soon)
